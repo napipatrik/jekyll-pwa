@@ -166,7 +166,7 @@ module Jekyll
     end
 
     Hooks.register :site, :post_write do |site|
-      enabled = (site.site.config.dig('pwa', 'enabled') != false)
+      enabled = (site.config.dig('pwa', 'enabled') != false)
       if enabled
         pwa_config = site.config['pwa'] || {}
         sw_helper = SWHelper.new(site, pwa_config)
